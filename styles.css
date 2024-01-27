@@ -18,28 +18,22 @@ body {
     margin-bottom: 0;
 }
 
-.squareDivs {
+.board {
+    border: solid 2px black;
     display: flex;
     flex-wrap: wrap;
     height: 400px;
     width: 400px;
-    cursor: none;
+    /* cursor: none; */
 }
 
 div {
-    width: 25px;
-    height: 25px;
-    border: solid 0.5px black;
-}
-
-div:hover {
-    background-color: black;
+    display: flex;
+    /* border: solid 0.5px black; */
 }
 
 
-
-
-.numberOfSquares {
+.changeSize {
     margin-bottom: 25px;
     margin-top: 25px;
 }
