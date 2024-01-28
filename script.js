@@ -11,9 +11,23 @@ function changeSize(num) {
         grid.className = "box";
         board.appendChild(grid);
     }
+    const box = document.querySelectorAll(".box");
+    let height = 400 / num;
+    let width = 400 / num;
+    box.forEach((element) => {
+        element.style.height = `${height}px`;
+        element.style.width = `${width}px`;
+    });
 }
 
-function black() {}
+function black() {
+    const box = document.querySelectorAll(".box");
+    box.addEventListener("mousedown", () => {
+        box.forEach((element) => {
+            element.style.backgroundColor = black;
+        });
+    });
+}
 
 function rainbow() {}
 
