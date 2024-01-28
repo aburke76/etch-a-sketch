@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Etch-a-Sketch!</title>
-</head>
-<body>
-    <h1 id="mainH1">Etch-a-Sketch!</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Etch-a-Sketch!</title>
+    </head>
+    <body>
+        <container>
+            <h1 id="mainH1">Etch-a-Sketch!</h1>
+            <button class="black">Black</button>
+            <button class="rainbow">Rainbow</button>
+            <button class="erase">Erase</button>
+            <button class="changeSize">Change Size</button>
+            <button class="reset">Reset</button>
+        </container>
 
-    <container>
-        <button class="black">Black</button>
-        <button class="rainbow">Rainbow</button>
-        <button class="erase">Erase</button>
-        <button class="changeSize">Change Size</button>
-        <button class="reset">Reset</button>
-    </container>
+        <container class="board"></container>
 
-    <container class="board"></container>
-
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
