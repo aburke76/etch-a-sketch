@@ -89,3 +89,20 @@ footer {
     text-align: center;
     padding-top: 25px;
 }
+
+@media (max-width: 1100px) {
+    body {
+        align-items: center;
+    }
+
+    .mainContainer {
+        flex-direction: column;
+        height: auto;
+        width: fit-content;
+        align-items: center;
+    }
+
+    .footer {
+        text-align: center;
+    }
+}
