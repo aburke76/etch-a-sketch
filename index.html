@@ -3,20 +3,46 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script
+            src="https://kit.fontawesome.com/eb430e4f57.js"
+            crossorigin="anonymous"
+        ></script>
         <link rel="stylesheet" href="styles.css" />
         <title>Etch-a-Sketch!</title>
     </head>
     <body>
-        <container>
-            <h1 id="mainH1">Etch-a-Sketch!</h1>
-            <button class="black">Black</button>
-            <button class="rainbow">Rainbow</button>
-            <button class="erase">Erase</button>
-            <button class="changeSize">Change Size</button>
-            <button class="reset">Reset</button>
-        </container>
+        <div class="mainContainer">
+            <div class="h1Buttons">
+                <h1 id="mainH1">Etch-a-Sketch!</h1>
+                <div class="buttons">
+                    <div class="picker">
+                        <input
+                            type="color"
+                            id="color"
+                            name="color"
+                            value="#ffffff"
+                        />
+                        <label for="color">Choose Color</label>
+                    </div>
+                    <button class="black">Black</button>
+                    <button class="rainbow">Rainbow</button>
+                    <button class="changeSize">Change Size</button>
+                    <button class="erase">Erase</button>
+                    <button class="reset">Reset</button>
+                </div>
+            </div>
+            <container class="board"></container>
+        </div>
 
-        <container class="board"></container>
+        <footer>
+            <p>
+                &copy aburke76
+                <a id="icon" href="https://github.com/aburke76"
+                    ><i class="fa-brands fa-github"></i
+                ></a>
+            </p>
+        </footer>
 
         <script src="script.js"></script>
     </body>

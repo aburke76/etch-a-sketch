@@ -4,6 +4,7 @@ const eraseButton = document.querySelector(".erase");
 const rainbowButton = document.querySelector(".rainbow");
 const sizeButton = document.querySelector(".changeSize");
 const blackButton = document.querySelector(".black");
+const colorPicker = document.querySelector("#color");
 
 function changeSize(num) {
     let numSq = num * num;
@@ -13,8 +14,8 @@ function changeSize(num) {
         board.appendChild(grid);
     }
     const box = document.querySelectorAll(".box");
-    let height = 400 / num;
-    let width = 400 / num;
+    let height = 600 / num;
+    let width = 600 / num;
     box.forEach((element) => {
         element.style.height = `${height}px`;
         element.style.width = `${width}px`;
@@ -31,18 +32,18 @@ function black() {
     });
 }
 
-function randRGB() {
-    let r = Math.floor(Math.random() * 255);
-    let g = Math.floor(Math.random() * 255);
-    let b = Math.floor(Math.random() * 255);
-    return `rbg(${r}, ${g}, ${b})`;
+function randomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 function rainbow() {
     const box = document.querySelectorAll(".box");
     box.forEach((element) => {
         element.addEventListener("mouseover", () => {
-            element.style.backgroundColor = randRGB();
+            element.style.backgroundColor = randomColor();
         });
     });
 }
@@ -51,7 +52,7 @@ function erase() {
     const box = document.querySelectorAll(".box");
     box.forEach((element) => {
         element.addEventListener("mouseover", () => {
-            element.style.backgroundColor = "";
+            element.style.backgroundColor = "white";
         });
     });
 }
@@ -64,25 +65,30 @@ function reset() {
     black();
 }
 
+function pickColor() {
+    const box = document.querySelectorAll(".box");
+    box.forEach((element) => {
+        element.addEventListener("mouseover", () => {
+            element.style.backgroundColor = colorPicker.value;
+        });
+    });
+}
+
 resetButton.addEventListener("click", reset);
 eraseButton.addEventListener("click", erase);
 blackButton.addEventListener("click", black);
 rainbowButton.addEventListener("click", rainbow);
+colorPicker.addEventListener("change", pickColor);
 sizeButton.addEventListener("click", () => {
     const box = document.querySelectorAll(".box");
     box.forEach((element) => {
         element.remove();
     });
-    let input = prompt("Pick a size! (please keep it between 1 and 128)");
-    if (input > 128 || input < 1) {
-        input = prompt("Pick a size! (please keep it between 1 and 128)");
+    let input = prompt("Pick a size! (please keep it between 1 and 100)");
+    while (input > 101 || input < 2) {
+        input = prompt("Pick a size! (please keep it between 1 and 100)");
     }
-    if (input === 1) {
-        alert("What can you draw with this? Oh well, if you insist.");
-        changeSize(1);
-    } else {
-        changeSize(input);
-    }
+    changeSize(input);
 });
 
 black();

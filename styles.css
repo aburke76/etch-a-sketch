@@ -3,27 +3,89 @@
 body {
     font-family: "Merriweather", sans-serif;
     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 10px;
+    background-color: #22223b;
+}
+
+.mainContainer {
+    display: flex;
     flex-direction: row;
-    gap: 100px;
-    /* height: 100vh; */
-    /* margin: 0; */
+    width: auto;
+    height: 600px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.h1Buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding-top: 10px;
+}
+
+#mainH1 {
+    display: flex;
+    color: tan;
+}
+
+button,
+.picker {
+    width: 150px;
+    height: 50px;
+    color: #22223b;
+    background-color: #f2e9e4;
+    font-weight: 700;
+    border-radius: 10px;
+    border-color: #4a4e69;
+    font-size: large;
+    /* box-shadow: 4px 4px 3px; */
+    transition: all 0.25s ease-in-out;
+}
+
+.picker {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #343a40;
+    color: tan;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 50px;
+    height: 500px;
 }
 
 .board {
     display: flex;
     flex-wrap: wrap;
-    border: solid 1px black;
-    height: 400px;
-    width: 400px;
+    height: 600px;
+    width: 600px;
     cursor: pointer;
+    box-shadow: 5px 5px 10px;
+    border: solid 3px tan;
 }
 
 .box {
     box-sizing: border-box;
-    border: solid 0.5px black;
 }
 
-.changeSize {
-    margin-bottom: 25px;
-    margin-top: 25px;
+footer,
+a {
+    color: #f5f3f4;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 25px;
 }
